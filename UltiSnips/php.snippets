@@ -1,0 +1,118 @@
+snippet ws_module "微赛Module" b
+<?php
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+use Modules\ModuleBase;
+
+/**
+ * Class ${1:`!p snip.rv=snip.basename`}.
+ */
+class $1 extends ModuleBase
+{
+}
+
+endsnippet
+
+snippet ws_service "微赛Service" b
+<?php
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * Class ${1:`!p snip.rv=snip.basename`}.
+ */
+class $1 extends ServiceBase
+{
+}
+
+endsnippet
+
+snippet ws_model "微赛模型" b
+<?php
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * Class ${1:`!p snip.rv=snip.basename`}.
+ */
+class $1 extends ModelBase
+{
+
+    /**
+     * 表字段
+     *
+     * @var array
+     */
+    public static $fields = [
+    ];
+
+    protected function db()
+    {
+        return '${2}';
+    }
+
+    /**
+     * Get table name.
+     *
+     * @return string Table name.
+     */
+    public function getTableName()
+    {
+        return '${3}';
+    }
+
+    /**
+     * Get primary key.
+     *
+     * @return string Current table's primary key.
+     */
+    public function primaryKey()
+    {
+        return 'id';
+    }
+
+    /**
+     * 数据校验配置.
+     *
+     * @return array validation rules.
+     */
+    public function rules()
+    {
+        return [];
+    }
+
+}
+
+endsnippet
+
+snippet ws_phpunit "微赛单元测试" b
+<?php
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * Class ${1:`!p snip.rv=snip.basename`}.
+ */
+class $1 extends \PHPUnit_Framework_TestCase
+{
+}
+
+endsnippet
+

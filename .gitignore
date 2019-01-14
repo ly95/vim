@@ -1,0 +1,6 @@
+swapfiles
+undo-dir
+view
+bundle/*
+.netrwhist
+vimshell

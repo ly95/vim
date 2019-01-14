@@ -1,0 +1,8 @@
+alias vi="vi -u ~/.virc"
+alias grep='grep --color=auto'
+alias gb="git branch"
+alias gc="git checkout"
+alias gs="git status"
+alias gd="git diff"
+
+sublime () { open -a "Sublime Text" $* ;}

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [[ `brew -v` > /dev/null ]]; then
+    brew install zsh zsh-completions
+fi
+
+realpath=`readlink $0`
+if [[ $realpath ]]; then
+    CD=$(dirname $realpath)
+else
+    CD=$(dirname "${BASH_SOURCE[0]}")
+fi
+
+VundleDir="$CD/bundle/Vundle.vim"
+
+if [[ ! -d "$VundleDir" ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git "$PWD"/bundle/Vundle.vim
+fi
+
+#if [[ -d "$CD/bundle/vimproc.vim" ]]; then
+    #make
+#fi
+
+#if [[ ! -d "~/.tmux/plugins/tpm" ]]; then
+    #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#fi
